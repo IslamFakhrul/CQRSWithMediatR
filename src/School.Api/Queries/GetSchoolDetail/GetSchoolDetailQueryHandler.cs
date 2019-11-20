@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using School.Data;
 using System;
 using System.Threading;
@@ -9,10 +10,12 @@ namespace School.Api.Queries.GetSchoolDetail
     public class GetSchoolDetailQueryHandler : IRequestHandler<GetSchoolDetailQuery, GetSchoolDetailQueryResponse>
     {
         private readonly SchoolDbContext _context;
+        private readonly IMapper _mapper;
 
-        public GetSchoolDetailQueryHandler(SchoolDbContext context)
+        public GetSchoolDetailQueryHandler(SchoolDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public async Task<GetSchoolDetailQueryResponse> Handle(GetSchoolDetailQuery request, CancellationToken cancellationToken)
@@ -25,17 +28,7 @@ namespace School.Api.Queries.GetSchoolDetail
                 throw new Exception($"Entity \"{nameof(School)}\" ({request.RefId}) was not found.");
             }
 
-            return new GetSchoolDetailQueryResponse
-            {
-                RefId = school.RefId,
-                SchoolName = school.SchoolName,
-                SchoolCode = school.SchoolCode,
-                SchoolAddress = school.SchoolAddress,
-                SchoolUrl = school.SchoolUrl,
-                SchoolType = school.SchoolType,
-                SchoolSector = school.SchoolSector,
-                SchoolPhoneNumber = school.SchoolPhoneNumber
-            };
+            return _mapper.Map<GetSchoolDetailQueryResponse>(school);
         }
     }
 }

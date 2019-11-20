@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using School.Data;
 using System;
@@ -10,10 +11,12 @@ namespace School.Api.Commands.UpdateSchool
     public class UpdateSchoolCommandHandler : IRequestHandler<UpdateSchoolCommand, int>
     {
         private readonly SchoolDbContext _context;
+        private readonly IMapper _mapper;
 
-        public UpdateSchoolCommandHandler(SchoolDbContext context)
+        public UpdateSchoolCommandHandler(SchoolDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public async Task<int> Handle(UpdateSchoolCommand request, CancellationToken cancellationToken)
@@ -26,13 +29,7 @@ namespace School.Api.Commands.UpdateSchool
                 throw new Exception($"Entity \"{nameof(School)}\" ({request.RefId}) was not found.");
             }
 
-            school.SchoolName = request.SchoolName;
-            school.SchoolCode = request.SchoolCode;
-            school.SchoolUrl = request.SchoolUrl;
-            school.SchoolAddress = request.SchoolAddress;
-            school.SchoolType = request.SchoolType;
-            school.SchoolSector = request.SchoolSector;
-            school.SchoolPhoneNumber = request.SchoolPhoneNumber;
+            _mapper.Map(request, school);
 
             return await _context.SaveChangesAsync(cancellationToken);
         }
