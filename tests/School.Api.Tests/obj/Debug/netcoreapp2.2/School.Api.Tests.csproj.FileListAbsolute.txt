@@ -1,0 +1,11 @@
+C:\Projects\GitHub\CQRSWithMediatR\School\tests\School.Api.Tests\bin\Debug\netcoreapp2.2\School.Api.Tests.deps.json
+C:\Projects\GitHub\CQRSWithMediatR\School\tests\School.Api.Tests\bin\Debug\netcoreapp2.2\School.Api.Tests.runtimeconfig.json
+C:\Projects\GitHub\CQRSWithMediatR\School\tests\School.Api.Tests\bin\Debug\netcoreapp2.2\School.Api.Tests.runtimeconfig.dev.json
+C:\Projects\GitHub\CQRSWithMediatR\School\tests\School.Api.Tests\bin\Debug\netcoreapp2.2\School.Api.Tests.dll
+C:\Projects\GitHub\CQRSWithMediatR\School\tests\School.Api.Tests\bin\Debug\netcoreapp2.2\School.Api.Tests.pdb
+C:\Projects\GitHub\CQRSWithMediatR\School\tests\School.Api.Tests\obj\Debug\netcoreapp2.2\School.Api.Tests.csprojAssemblyReference.cache
+C:\Projects\GitHub\CQRSWithMediatR\School\tests\School.Api.Tests\obj\Debug\netcoreapp2.2\School.Api.Tests.csproj.CoreCompileInputs.cache
+C:\Projects\GitHub\CQRSWithMediatR\School\tests\School.Api.Tests\obj\Debug\netcoreapp2.2\School.Api.Tests.AssemblyInfoInputs.cache
+C:\Projects\GitHub\CQRSWithMediatR\School\tests\School.Api.Tests\obj\Debug\netcoreapp2.2\School.Api.Tests.AssemblyInfo.cs
+C:\Projects\GitHub\CQRSWithMediatR\School\tests\School.Api.Tests\obj\Debug\netcoreapp2.2\School.Api.Tests.dll
+C:\Projects\GitHub\CQRSWithMediatR\School\tests\School.Api.Tests\obj\Debug\netcoreapp2.2\School.Api.Tests.pdb
